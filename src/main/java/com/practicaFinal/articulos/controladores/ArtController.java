@@ -33,6 +33,8 @@ public class ArtController {
     public ResponseEntity<Art> crearArticulo(@RequestBody Art articulo) {
 
         articuloServices.crearArticulo(articulo);
+        
+        //check imagen
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -62,7 +64,7 @@ public class ArtController {
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
+        //recheck de paginacion
     @RequestMapping(value = "/articulos/paginacion", method = RequestMethod.GET, params = {"limit", "offset"}, produces = {"application/json"})
     public List<Art> articulosPaginacion(@RequestParam("limit") int limit, @RequestParam("offset") int offset) {
 
